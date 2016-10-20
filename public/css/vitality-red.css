@@ -28,9 +28,6 @@ section {
     padding: 75px 0;
   }
 }
-@media (max-width: @screen-xs) {
-    .brand-name-subtext{font-size: 36px;}
-}
 
 .owl-theme .owl-controls .owl-page span {
   background: rgba(34, 34, 34, 0.5);
@@ -310,6 +307,13 @@ header .brand-name-subtext {
   line-height: 20px;
   font-weight: 300;
 }
+
+header .brand-name-subtext-big {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 300;
+}
+
 header img {
   max-width: 150px;
   max-height: 150px;
