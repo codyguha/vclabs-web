@@ -1209,3 +1209,7 @@ body.vintage .about-carousel .owl-controls .owl-next,
 body.vintage .testimonials .owl-controls .owl-next {
   line-height: 55px !important;
 }
+
+#instagram {
+  padding: 20px;
+}
