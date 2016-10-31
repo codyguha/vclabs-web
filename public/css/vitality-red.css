@@ -807,6 +807,7 @@ aside.cta-quote span.quote {
 .portfolio-image-vclabs {
   height: 520px;
   width: 255px;
+  float: right;
 }
 
 .mockup-carousel .item {
@@ -1179,7 +1180,7 @@ body.modern h6,
 body.modern .navbar-brand,
 body.modern p.lead,
 body.modern header .brand-name,
-body.modern .portfolio-carousel .project-name,
+body.modern .portfolio-carousel,
 body.modern .testimonials .testimonial-author .name {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: 700 !important;
