@@ -720,6 +720,7 @@ aside.cta-quote span.quote {
   }
   .portfolio-carousel .item .project-details {
     padding: 25% 0 0;
+    text-align: left;
   }
   .portfolio-carousel .item .project-details img.client-logo {
     margin: 0 auto 25px 0;
@@ -731,7 +732,6 @@ aside.cta-quote span.quote {
   }
   .portfolio-carousel .item .project-details .project-description {
     font-size: 20px;
-    text-align: left;
     line-height: 20px;
   }
   .portfolio-carousel .item hr.colored {
