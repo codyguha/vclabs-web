@@ -725,12 +725,14 @@ aside.cta-quote span.quote {
   .portfolio-carousel .item .project-details img.client-logo {
     margin: 0 auto 25px 0;
   }
-  .portfolio-carousel .item .project-details .project-name,
-  .modal-body .project-details .project-name {
+  .portfolio-carousel .item .project-details .project-name {
     display: block;
     text-transform: capitalize;
     font-size: 50px;
     line-height: 50px;
+  }
+  .portfolio-modal .modal-content h2 {
+    text-transform: capitalize;
   }
   .portfolio-carousel .item .project-details .project-description {
     font-size: 20px;
@@ -1185,13 +1187,13 @@ footer.footer .copyright p.small {
     line-height: 1.5;
 }
 
-/*.modal-body .project-details .project-name {
+.modal-body .project-details .project-name {
     display: block;
-    font-size: 46px;
-    
-    margin-bottom: 24px;
-    font-weight: 400 !important;
-}*/
+    text-transform: capitalize;
+    font-size: 40px;
+    line-height: 50px;
+}
+
 body.modern {
   font-family: "Cardo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
