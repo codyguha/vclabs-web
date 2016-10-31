@@ -160,10 +160,10 @@ hr.colored {
     margin: 20px auto;
   }
   hr.left {
-    margin: 20px auto 24px 0;
+    margin: 20px auto 20px 0;
   }
   hr.right {
-    margin: 20px 0 24px auto;
+    margin: 20px 0 20px auto;
   }
 }
 .text-primary {
@@ -714,7 +714,7 @@ aside.cta-quote span.quote {
 }
 @media (min-width: 992px) {
   .portfolio-carousel .item {
-    padding: 155px 55px 155px;
+    padding: 96px 55px 96px;
     text-align: left;
     min-height: 100%;
   }
