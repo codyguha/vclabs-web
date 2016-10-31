@@ -712,7 +712,7 @@ aside.cta-quote span.quote {
   right: 0;
 }
 @media (min-width: 765px) {
-  .portfolio-carousel .item {
+  .portfolio-carousel .item, .modal-body .project-details {
     padding: 96px 55px 96px;
     text-align: left;
     min-height: 100%;
@@ -1167,6 +1167,9 @@ footer.footer .copyright p.small {
   color: white;
 }
 
+.centered-container {
+  width: 720px;
+}
 body.modern {
   font-family: "Cardo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
