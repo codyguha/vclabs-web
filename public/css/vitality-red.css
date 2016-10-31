@@ -731,6 +731,7 @@ aside.cta-quote span.quote {
   }
   .portfolio-carousel .item .project-details .project-description {
     font-size: 20px;
+    text-align: left;
     line-height: 20px;
   }
   .portfolio-carousel .item hr.colored {
