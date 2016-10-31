@@ -1169,6 +1169,8 @@ footer.footer .copyright p.small {
 
 .centered-container {
   width: 720px;
+  margin-right: auto;
+  margin-left: auto;
 }
 body.modern {
   font-family: "Cardo", "Helvetica Neue", Helvetica, Arial, sans-serif;
