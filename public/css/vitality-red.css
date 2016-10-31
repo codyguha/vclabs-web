@@ -725,8 +725,10 @@ aside.cta-quote span.quote {
   .portfolio-carousel .item .project-details img.client-logo {
     margin: 0 auto 25px 0;
   }
-  .portfolio-carousel .item .project-details .project-name {
+  .portfolio-carousel .item .project-details .project-name,
+  .modal-body .project-details .project-name {
     display: block;
+    text-transform: capitalize;
     font-size: 50px;
     line-height: 50px;
   }
@@ -1179,17 +1181,17 @@ footer.footer .copyright p.small {
     margin-top: 48px;
 }
 .modal-body .project-details .project-description{
-    font-size: 20px;
-    line-height: 20px;
+    font-size: 18px;
+    line-height: 1.5;
 }
 
-.modal-body .project-details .project-name {
+/*.modal-body .project-details .project-name {
     display: block;
     font-size: 46px;
-    text-transform: capitalize;
+    
     margin-bottom: 24px;
     font-weight: 400 !important;
-}
+}*/
 body.modern {
   font-family: "Cardo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
