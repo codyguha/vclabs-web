@@ -711,16 +711,7 @@ aside.cta-quote span.quote {
 .portfolio-carousel .owl-controls .owl-next {
   right: 0;
 }
-.modal-body .project-details {
-    text-align: left;
-    margin-top: 48px;
 
-}
-
-.modal-body .project-name {
-    text-transform: capitalize;
-    margin-bottom: 24px;
-}
 @media (min-width: 765px) {
   .portfolio-carousel .item, {
     padding: 96px 55px 96px;
@@ -1181,6 +1172,16 @@ footer.footer .copyright p.small {
   width: 720px;
   margin-right: auto;
   margin-left: auto;
+}
+.modal-body .project-details {
+    text-align: left;
+    margin-top: 48px;
+
+}
+
+.modal-body .project-name {
+    text-transform: capitalize;
+    margin-bottom: 24px;
 }
 body.modern {
   font-family: "Cardo", "Helvetica Neue", Helvetica, Arial, sans-serif;
