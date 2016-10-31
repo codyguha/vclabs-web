@@ -658,7 +658,7 @@ aside.cta-quote span.quote {
   background-size: cover;
   -o-background-size: cover;
   padding: 50px 55px;
-  text-align: left;
+  text-align: center;
 }
 .portfolio-carousel .item .project-details {
   padding: 0;
@@ -711,7 +711,7 @@ aside.cta-quote span.quote {
 .portfolio-carousel .owl-controls .owl-next {
   right: 0;
 }
-@media (min-width: 412px) {
+@media (min-width: 400px) {
   .portfolio-carousel .item {
     padding: 96px 55px 96px;
     text-align: left;
