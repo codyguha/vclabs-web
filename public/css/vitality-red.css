@@ -802,6 +802,12 @@ aside.cta-quote span.quote {
   /* Safari and Chrome */
   z-index: 1052;
 }
+
+.portfolio-image-vclabs {
+  height: 520px;
+  width: 255px;
+}
+
 .mockup-carousel .item {
   margin: 0;
   padding: 0;
