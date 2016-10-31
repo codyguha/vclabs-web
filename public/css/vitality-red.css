@@ -1184,10 +1184,11 @@ footer.footer .copyright p.small {
 }
 
 .modal-body .project-details .project-name {
+    display: block;
+    font-size: 46px;
     text-transform: capitalize;
     margin-bottom: 24px;
     font-weight: 400 !important;
-    text-transform: uppercase !important;
 }
 body.modern {
   font-family: "Cardo", "Helvetica Neue", Helvetica, Arial, sans-serif;
