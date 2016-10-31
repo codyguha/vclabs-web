@@ -1181,6 +1181,7 @@ footer.footer .copyright p.small {
 .modal-body .project-details {
     text-align: left;
     margin-top: 48px;
+    margin-left: 24px;
 }
 .modal-body .project-details .project-description{
     font-size: 18px;
