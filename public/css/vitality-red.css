@@ -160,10 +160,10 @@ hr.colored {
     margin: 20px auto;
   }
   hr.left {
-    margin: 20px auto 20px 0;
+    margin: 20px auto 24px 0;
   }
   hr.right {
-    margin: 20px 0 20px auto;
+    margin: 20px 0 24px auto;
   }
 }
 .text-primary {
@@ -734,7 +734,7 @@ aside.cta-quote span.quote {
     line-height: 20px;
   }
   .portfolio-carousel .item hr.colored {
-    margin: 20px auto 20px 0;
+    margin: 24px auto 24px 0;
   }
 }
 .portfolio-gallery .item {
