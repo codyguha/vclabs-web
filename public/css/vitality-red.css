@@ -1216,8 +1216,8 @@ footer.footer .copyright p.small {
 }
 
 @media (max-width: 992px) {
-  p {
-    margin-bottom: 84px;
+  .modal-main-detail {
+    width: 100%;
   }
   .modal-body .project-details {
       text-align: center;
