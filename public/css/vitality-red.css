@@ -1215,6 +1215,35 @@ footer.footer .copyright p.small {
     padding-right: 84px;
 }
 
+@media (max-width: 992px) {
+  .modal-body .project-details {
+      text-align: center;
+  }
+  .modal-body .project-details .project-description{
+      font-size: 18px;
+      line-height: 1.5;
+  }
+
+  .modal-body .project-details .project-name {
+      text-align: center;
+      display: block;
+      text-transform: none;
+      font-size: 28px;
+      line-height: 28px;
+      font-weight: bold;
+  }
+
+  .modal-iphone, .iphone-right {
+    margin-top: 24px;
+    margin-left: auto;
+    margin right: auto;
+  }
+  .modal-deets, .modal-deets-left {
+      text-align: center;
+      margin-top: 24px;
+  }
+
+}
 body.modern {
   font-family: "Cardo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
