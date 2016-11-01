@@ -1230,6 +1230,8 @@ footer.footer .copyright p.small {
 }
   .modal-body .project-details {
       text-align: center;
+      margin-right: auto;
+      margin-left: auto;
   }
   .modal-body .project-details .project-description{
       font-size: 18px;
