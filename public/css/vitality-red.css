@@ -1232,7 +1232,7 @@ footer.footer .copyright p.small {
       line-height: 1.5;
   }
 
-  .modal-body .project-details .project-name {
+  .modal-body .project-details .project-name, .modal-body .project-name {
       text-align: center;
       display: block;
       text-transform: none;
@@ -1243,7 +1243,7 @@ footer.footer .copyright p.small {
 
   .modal-iphone, .iphone-right {
     margin-top: 24px;
-    margin-bottom: none;
+    margin-bottom: 0px;
     margin-left: auto;
     margin-right: auto;
   }
