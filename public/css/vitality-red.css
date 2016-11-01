@@ -1216,8 +1216,11 @@ footer.footer .copyright p.small {
 }
 
 @media (max-width: 992px) {
+  .modal-main-detail {
+    margin-bottom: 84px;
+  }
   .centered-container {
-  width: 600px;
+  width: 85%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -1240,7 +1243,7 @@ footer.footer .copyright p.small {
 
   .modal-iphone, .iphone-right {
     margin-top: 24px;
-    margin-bottom: 0px;
+    margin-bottom: none;
     margin-left: auto;
     margin-right: auto;
   }
