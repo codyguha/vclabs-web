@@ -1240,7 +1240,7 @@ footer.footer .copyright p.small {
     margin-top: 24px;
     margin-bottom: none;
     margin-left: auto;
-    margin right: auto;
+    margin-right: auto;
   }
   .modal-deets, .modal-deets-left {
       text-align: center;
@@ -1248,8 +1248,8 @@ footer.footer .copyright p.small {
       padding-right: 0px;
       padding-left: 0px;
   }
-
 }
+
 body.modern {
   font-family: "Cardo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
