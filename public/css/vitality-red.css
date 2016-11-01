@@ -1256,6 +1256,9 @@ footer.footer .copyright p.small {
     margin-left: auto;
     margin-right: auto;
   }
+  .iphone-right {
+    margin-bottom: 28px;
+  }
   .modal-deets, .modal-deets-left {
       text-align: center;
       margin-top: 24px;
