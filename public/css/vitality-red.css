@@ -1205,6 +1205,11 @@ footer.footer .copyright p.small {
       margin-top: 120px;
     padding-left: 84px;
 }
+.modal-iphone-right {
+    margin-top: 72px;
+    margin-bottom: 72px;
+    padding-right: 84px;
+}
 body.modern {
   font-family: "Cardo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
