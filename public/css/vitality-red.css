@@ -1250,13 +1250,13 @@ footer.footer .copyright p.small {
       font-weight: bold;
   }
 
-  .modal-iphone, .iphone-right {
+  .modal-iphone, .modal-iphone-right {
     margin-top: 24px;
     margin-bottom: 0px;
     margin-left: auto;
     margin-right: auto;
   }
-  .iphone-right {
+  .modal-iphone-right {
     margin-bottom: 28px;
   }
   .modal-deets, .modal-deets-left {
