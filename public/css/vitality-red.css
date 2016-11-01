@@ -1183,6 +1183,10 @@ footer.footer .copyright p.small {
     margin-top: 48px;
     margin-left: 24px;
 }
+
+.modal-body h2{
+  text-transform: none;
+}
 .modal-body .project-details .project-description{
     font-size: 18px;
     line-height: 1.5;
