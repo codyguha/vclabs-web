@@ -1262,6 +1262,9 @@ footer.footer .copyright p.small {
       padding-right: 0px;
       padding-left: 0px;
   }
+  .modal-deets-left {
+      padding-top: 1324px;
+    }
 }
 
 body.modern {
