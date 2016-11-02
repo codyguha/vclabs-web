@@ -1218,7 +1218,7 @@ footer.footer .copyright p.small {
     margin-bottom: 72px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .modal-main-detail {
     margin-bottom: 42px;
   }
