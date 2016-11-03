@@ -1231,6 +1231,11 @@ footer.footer .copyright p.small {
   width: 155%;
 }
 
+@media (max-width: 992px) {
+  .project-details-kik {
+  width: 100%;
+  }
+}
 @media (max-width: 767px) {
   .project-details-kik {
   width: 100%;
