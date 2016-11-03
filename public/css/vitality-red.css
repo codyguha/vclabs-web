@@ -1227,7 +1227,14 @@ footer.footer .copyright p.small {
     margin-bottom: 72px;
 }
 
+.project-details-kik {
+  width: 155%;
+}
+
 @media (max-width: 767px) {
+  .project-details-kik {
+  width: 100%;
+}
   .modal-main-detail {
     margin-bottom: 42px;
   }
