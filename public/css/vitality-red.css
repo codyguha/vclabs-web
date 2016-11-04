@@ -401,6 +401,8 @@ header.video .scroll-down {
 }
 .andrew-quote {
   padding-top: 42px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 aside.cta-quote {
@@ -1312,9 +1314,9 @@ body p.lead,
 body header .brand-name,
 body .portfolio-carousel,
 body .testimonials .testimonial-author .name {
-  font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B";
+font-family: "Gotham A", "Gotham B";
 font-style: normal;
-font-weight: 300;
+font-weight: 900;
 }
 body.modern .about-carousel .owl-controls .owl-prev,
 body.modern .testimonials .owl-controls .owl-prev,
