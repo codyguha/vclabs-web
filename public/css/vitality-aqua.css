@@ -407,6 +407,7 @@ aside.cta-quote span.quote {
   font-size: 30px;
   line-height: 32px;
   font-weight: 300;
+  color: white;
 }
 @media (min-width: 768px) {
   aside.cta-quote {
