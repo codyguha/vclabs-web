@@ -411,7 +411,7 @@ aside.cta-quote {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  padding: 100px 0;
+  padding: 0 0;
   text-align: center;
 }
 aside.cta-quote span.quote {
