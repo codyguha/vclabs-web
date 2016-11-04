@@ -1301,7 +1301,12 @@ footer.footer .copyright p.small {
 body, .project-description {
   font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B";
 font-style: normal;
-font-weight: 300;
+font-weight: 200;
+}
+.brand-name-subtext, .brand-name-subtext-big{
+  font-family: "Gotham A", "Gotham B";
+font-style: normal;
+font-weight: 200;
 }
 body h1,
 body h2,
