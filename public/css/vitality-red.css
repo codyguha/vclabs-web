@@ -94,11 +94,7 @@ fieldset[disabled] .btn-primary.active {
   color: #EF4035;
   background-color: white;
 }
-body {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-}
+
 a {
   color: #EF4035;
   -webkit-transition: all 0.5s;
@@ -114,22 +110,7 @@ p {
   font-size: 18px;
   line-height: 1.5;
 }
-p.lead {
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 24px;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 900;
-  text-transform: uppercase;
-}
+
 @media (min-width: 481px) {
   h1 {
     font-size: 52px;
@@ -406,6 +387,9 @@ header.video .scroll-down {
 }
 
 aside.cta-quote {
+  font-family: "Gotham A", "Gotham B";
+font-style: italic;
+font-weight: 200;
   color: white;
   background-color: #222;
   background: no-repeat center center scroll;
@@ -1300,8 +1284,8 @@ footer.footer .copyright p.small {
 
 body, .project-description {
   font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B";
-font-style: normal;
-font-weight: 200;
+  font-style: normal;
+  font-weight: 200;
 }
 .brand-name-subtext, .brand-name-subtext-big{
   font-family: "Gotham A", "Gotham B";
@@ -1327,30 +1311,5 @@ body.modern .about-carousel .owl-controls .owl-prev,
 body.modern .testimonials .owl-controls .owl-prev,
 body.modern .about-carousel .owl-controls .owl-next,
 body.modern .testimonials .owl-controls .owl-next {
-  line-height: 55px !important;
-}
-body.vintage {
-  font-family: "Cardo", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-}
-body.vintage h1,
-body.vintage h2,
-body.vintage h3,
-body.vintage h4,
-body.vintage h5,
-body.vintage h6,
-body.vintage .navbar-brand,
-body.vintage p.lead,
-body.vintage header .brand-name,
-body.vintage .portfolio-carousel .project-name,
-body.vintage .testimonials .testimonial-author .name {
-  font-family: "Sanchez", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  font-weight: 400 !important;
-  text-transform: uppercase !important;
-}
-body.vintage .about-carousel .owl-controls .owl-prev,
-body.vintage .testimonials .owl-controls .owl-prev,
-body.vintage .about-carousel .owl-controls .owl-next,
-body.vintage .testimonials .owl-controls .owl-next {
   line-height: 55px !important;
 }
