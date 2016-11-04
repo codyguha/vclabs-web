@@ -411,7 +411,6 @@ aside.cta-quote {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  padding: 0 0;
   text-align: center;
 }
 aside.cta-quote span.quote {
@@ -423,7 +422,6 @@ aside.cta-quote span.quote {
 @media (min-width: 768px) {
   aside.cta-quote {
     background-attachment: scroll;
-    padding: 150px 0;
   }
   aside.cta-quote span.quote {
     font-size: 36px;
@@ -432,7 +430,6 @@ aside.cta-quote span.quote {
 }
 @media (min-width: 992px) {
   aside.cta-quote {
-    padding: 300px 0;
   }
   aside.cta-quote span.quote {
     font-size: 40px;
