@@ -1296,9 +1296,10 @@ footer.footer .copyright p.small {
 }
 }
 
-body.modern {
-  font-family: "Cardo", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
+body {
+  font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B";
+font-style: normal;
+font-weight: 300;
 }
 body.modern h1,
 body.modern h2,
