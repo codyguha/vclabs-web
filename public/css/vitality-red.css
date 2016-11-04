@@ -361,6 +361,12 @@ header .scroll-down .btn:hover {
   margin-right: auto;
     margin-left: auto;
 }
+
+.focus-img-center {
+  margin-right: auto;
+    margin-left: auto;
+    margin-top: -23px;
+}
 @media (min-width: 1025px) {
   header {
     background-attachment: fixed;
