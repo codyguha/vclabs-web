@@ -400,7 +400,7 @@ header.video .scroll-down {
   }
 }
 .andrew-quote {
-  padding-top: 64px;
+  padding-top: 42px;
 }
 
 aside.cta-quote {
@@ -412,6 +412,7 @@ aside.cta-quote {
   background-size: cover;
   -o-background-size: cover;
   text-align: center;
+  padding: 84px;
 }
 aside.cta-quote span.quote {
   display: block;
