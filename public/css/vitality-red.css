@@ -1234,11 +1234,6 @@ footer.footer .copyright p.small {
 @media (max-width: 992px) {
   .project-details-kik {
   width: 100%;
-  }
-}
-@media (max-width: 767px) {
-  .project-details-kik {
-  width: 100%;
 }
   .modal-main-detail {
     margin-bottom: 42px;
