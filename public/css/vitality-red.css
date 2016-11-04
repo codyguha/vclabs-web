@@ -659,14 +659,18 @@ aside.cta-quote span.quote {
   font-size: 40px;
   line-height: 40px;
   margin-bottom: 24px;
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 900;
+  font-family: "Gotham A", "Gotham B";
+font-style: normal;
+font-weight: 900;
 }
 .portfolio-carousel .item .project-details .project-description {
   display: block;
   font-size: 18px;
   line-height: 18px;
   margin-bottom: 24px;
+  font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B";
+  font-style: normal;
+  font-weight: 200;
 }
 .portfolio-carousel .item .device-container {
   padding: 25px;
@@ -1282,7 +1286,7 @@ footer.footer .copyright p.small {
 }
 }
 
-body, .project-description {
+body {
   font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B";
   font-style: normal;
   font-weight: 200;
