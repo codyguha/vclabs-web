@@ -399,6 +399,10 @@ header.video .scroll-down {
     opacity: 0.5;
   }
 }
+.andrew-quote {
+  padding-top: 64px;
+}
+
 aside.cta-quote {
   color: white;
   background-color: #222;
