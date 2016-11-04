@@ -1301,20 +1301,20 @@ body {
 font-style: normal;
 font-weight: 300;
 }
-body.modern h1,
-body.modern h2,
-body.modern h3,
-body.modern h4,
-body.modern h5,
-body.modern h6,
-body.modern .navbar-brand,
-body.modern p.lead,
-body.modern header .brand-name,
-body.modern .portfolio-carousel,
-body.modern .testimonials .testimonial-author .name {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body .navbar-brand,
+body p.lead,
+body header .brand-name,
+body .portfolio-carousel,
+body .testimonials .testimonial-author .name {
+  font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B";
+font-style: normal;
+font-weight: 300;
 }
 body.modern .about-carousel .owl-controls .owl-prev,
 body.modern .testimonials .owl-controls .owl-prev,
