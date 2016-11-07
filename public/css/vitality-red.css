@@ -1222,6 +1222,10 @@ footer.footer .copyright p.small {
   margin-bottom: 42px;
 }
 
+.kik-qr-code-phone {
+  margin-bottom: 0px;
+}
+
 .modal-deets-left {
     margin-top: 84px;
     padding-right: 84px;
