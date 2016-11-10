@@ -980,14 +980,14 @@ font-weight: 900;
 }
 .pricing .pricing-item {
   text-align: center;
-  background: lightgrey;
+  background: #eaeaea;
   color: #222;
   padding: 30px;
   -webkit-box-shadow: 0px 0px 30px 5px rgba(34, 34, 34, 0.75);
   -moz-box-shadow: 0px 0px 30px 5px rgba(34, 34, 34, 0.75);
   box-shadow: 0px 0px 30px 5px rgba(34, 34, 34, 0.75);
   z-index: 1;
-  margin-bottom: 30px;
+  margin-bottom: 48px;
 }
 .pricing .pricing-item h3 {
   margin: 0;
@@ -1013,7 +1013,7 @@ font-weight: 900;
     background-attachment: scroll;
   }
   .pricing .pricing-item {
-    margin-bottom: 0;
+
   }
   .pricing .pricing-item.featured-first {
     margin-right: -15px;
