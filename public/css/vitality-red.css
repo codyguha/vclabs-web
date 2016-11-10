@@ -1330,3 +1330,30 @@ body.modern .about-carousel .owl-controls .owl-next,
 body.modern .testimonials .owl-controls .owl-next {
   line-height: 55px !important;
 }
+.hoverable {
+      cursor:default;
+      position: relative;
+      display: block;
+    }
+    .hoverable .hover {
+      opacity:0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .hoverable .hover,
+    .hoverable .normal{
+        transition: opacity .5s;
+        -o-transition: opacity .5s;
+        -ms-transition: opacity .5s;
+        -moz-transition: opacity .5s;
+        -webkit-transition: opacity .5s;
+    }
+    .hoverable:hover .normal {
+      opacity:0;
+    }
+    .hoverable:hover .hover {
+      opacity:1;
+    }
