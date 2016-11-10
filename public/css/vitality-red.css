@@ -1017,8 +1017,11 @@ font-weight: 900;
 }
 .pricing .pricing-item .list-group-item {
   border-radius: 0;
-  background-color: #eaeaea;
+  background-color: white;
   border: 0px solid #ddd;
+}
+.list-group-item a {
+  font-size: large;
 }
 @media (min-width: 992px) {
   .pricing {
