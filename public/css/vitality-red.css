@@ -728,6 +728,10 @@ font-weight: 900;
     padding: 25% 0 0;
     text-align: left;
   }
+
+  .project-details-center{
+    text-align: center;
+  }
   .portfolio-carousel .item .project-details img.client-logo {
     margin: 0 auto 25px 0;
   }
