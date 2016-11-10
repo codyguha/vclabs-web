@@ -1013,6 +1013,8 @@ font-weight: 900;
 }
 .pricing .pricing-item .list-group-item {
   border-radius: 0;
+  background-color: #eaeaea;
+  border: 0px solid #ddd;
 }
 @media (min-width: 992px) {
   .pricing {
