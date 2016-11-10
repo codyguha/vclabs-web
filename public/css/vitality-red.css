@@ -1054,10 +1054,8 @@ font-weight: 900;
   position: relative;
   padding-right: 0;
   padding-left: 0;
-  border: none;
   border-radius: 0;
   font-size: 1.5em;
-  background: none;
   box-shadow: none !important;
   resize: none;
 }
@@ -1065,7 +1063,7 @@ font-weight: 900;
   display: block;
   z-index: 0;
   position: relative;
-  top: 2em;
+  top: 0;
   margin: 0;
   font-size: 0.85em;
   line-height: 1.764705882em;
@@ -1078,7 +1076,7 @@ font-weight: 900;
 }
 .floating-label-form-group::not(:first-child) {
   padding-left: 14px;
-  border-left: 1px solid #e1e1e1;
+
 }
 .floating-label-form-group-with-value label {
   top: 0;
@@ -1087,9 +1085,7 @@ font-weight: 900;
 .floating-label-form-group-with-focus label {
   color: #EF4035;
 }
-form .row:first-child .floating-label-form-group {
-  border-top: 1px solid #e1e1e1;
-}
+
 footer.footer {
   color: rgba(255, 255, 255, 0.7);
   background: no-repeat center center scroll;
