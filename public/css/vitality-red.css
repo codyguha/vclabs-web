@@ -1369,3 +1369,9 @@ body.modern .testimonials .owl-controls .owl-next {
     .hoverable:hover .hover {
       opacity:1;
     }
+
+.modal-body .job-page {
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+}
