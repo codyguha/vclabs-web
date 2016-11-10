@@ -1343,7 +1343,8 @@ body.modern .testimonials .owl-controls .owl-next {
       cursor:default;
       position: relative;
       display: block;
-      margin: 20px;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
     .hoverable .hover {
       opacity:0;
