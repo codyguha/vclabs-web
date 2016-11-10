@@ -1343,6 +1343,7 @@ body.modern .testimonials .owl-controls .owl-next {
     }
     .hoverable .hover {
       opacity:0;
+      background-color: white;
       position: absolute;
       top: 0;
       left: 0;
