@@ -1046,7 +1046,6 @@ font-weight: 900;
   position: relative;
   margin-bottom: 0;
   padding-bottom: 0.5em;
-  border-bottom: 1px solid #e1e1e1;
 }
 .floating-label-form-group input,
 .floating-label-form-group textarea {
