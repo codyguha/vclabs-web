@@ -990,7 +990,10 @@ font-weight: 900;
     border-style: solid;
     border-width: 1px;
     border-color: lightgray;
-  margin-bottom: 48px;
+}
+.pricing-img {
+  width: 66%;
+  padding-top: 21px;
 }
 .pricing .pricing-item h3 {
   margin: 0;
