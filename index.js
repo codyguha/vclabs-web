@@ -4,7 +4,6 @@ var path = require('path');
 var bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
@@ -21,8 +20,8 @@ app.get('/jobs', function (req, res) {
   res.sendFile(path.join(__dirname + '/jobs.html'));
 });
 
-app.post('/Jobapp',function(request,response){
-   console.log(request.body) //you will get your data in this as object.
+app.post('/Jobapp',function(req,response){
+   console.log(JSON.stringify(req.body)) //you will get your data in this as object.
 })
 
 
