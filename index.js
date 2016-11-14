@@ -16,5 +16,10 @@ app.get('/jobs', function (req, res) {
   res.sendFile(path.join(__dirname + '/jobs.html'));
 });
 
+app.post('/Jobapp', function (req, res) {
+		alert('APPLICATION SUBMITTED SUCCESSFULLY!')
+});
+
+
 app.listen(process.env.PORT || 5000, function () {
 });
