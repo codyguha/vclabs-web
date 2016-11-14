@@ -22,7 +22,6 @@ app.get('/jobs', function (req, res) {
 
 app.post('/jobapp',function(req,res){
    console.log(JSON.stringify(req.body)) //you will get your data in this as object.
-   alert("boop!")
    res.redirect('/website');
 })
 
