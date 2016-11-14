@@ -724,6 +724,7 @@ font-weight: 900;
     padding: 96px 55px 96px;
     text-align: left;
     min-height: 100%;
+    height: 600px;
   }
   .portfolio-carousel .item .project-details {
     padding: 25% 0 0;
@@ -732,6 +733,7 @@ font-weight: 900;
 
   .project-details-center{
     text-align: center;
+    margin:15%;
   }
   .portfolio-carousel .item .project-details img.client-logo {
     margin: 0 auto 25px 0;
