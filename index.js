@@ -20,9 +20,13 @@ app.get('/jobs', function (req, res) {
   res.sendFile(path.join(__dirname + '/jobs.html'));
 });
 
+app.get('/application_success',function(req,res){
+   res.sendFile(path.join(__dirname + '/sucess.html'));
+})
+
 app.post('/jobapp',function(req,res){
    console.log(JSON.stringify(req.body)) //you will get your data in this as object.
-   // res.redirect('/website');
+   res.redirect('/application_success');
 })
 
 app.listen(process.env.PORT || 5000, function () {
