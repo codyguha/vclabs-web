@@ -1002,6 +1002,12 @@ font-weight: 900;
   width: 66%;
   padding-top: 21px;
 }
+.pricing-img-b {
+  width: 66%;
+  padding-top: 21px;
+  opacity:0.75;
+}
+
 .pricing .pricing-item h3 {
   margin: 0;
 }
