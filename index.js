@@ -26,7 +26,8 @@ app.get('/success',function(req,res){
 })
 
 app.post('/jobapp',function(req,res){
-   var application = JSON.stringify(req.body) //you will get your data in this as object.
+	console.log(JSON.stringify(req.body))
+   var application = req.body //you will get your data in this as object.
    res.redirect('/success');
    mongodb.MongoClient.connect(process.env.MONGODB_URI, function(err, db) {
 		if (err) throw err;
