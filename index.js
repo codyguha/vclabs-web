@@ -20,8 +20,9 @@ app.get('/jobs', function (req, res) {
   res.sendFile(path.join(__dirname + '/jobs.html'));
 });
 
-app.post('/Jobapp',function(req,response){
+app.post('/jobapp',function(req,res){
    console.log(JSON.stringify(req.body)) //you will get your data in this as object.
+   alert("boop!")
 })
 
 
