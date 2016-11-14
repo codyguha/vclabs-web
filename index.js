@@ -21,7 +21,7 @@ app.get('/jobs', function (req, res) {
 });
 
 app.get('/application_success',function(req,res){
-   res.sendFile(path.join(__dirname + '/sucess.html'));
+   res.sendFile(path.join(__dirname + '/success.html'));
 })
 
 app.post('/jobapp',function(req,res){
