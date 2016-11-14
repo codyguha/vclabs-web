@@ -26,6 +26,5 @@ app.post('/jobapp',function(req,res){
    res.redirect('/website');
 })
 
-
 app.listen(process.env.PORT || 5000, function () {
 });
