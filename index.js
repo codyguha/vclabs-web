@@ -1,4 +1,5 @@
 var express = require('express');
+var mongodb = require('mongodb');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
@@ -20,8 +21,18 @@ app.get('/jobs', function (req, res) {
   res.sendFile(path.join(__dirname + '/jobs.html'));
 });
 
+app.get('/success',function(req,res){
+   res.sendFile(path.join(__dirname + '/success.html'));
+})
+
 app.post('/jobapp',function(req,res){
-   console.log(JSON.stringify(req.body)) //you will get your data in this as object.
+   var application = JSON.stringify(req.body) //you will get your data in this as object.
+   res.redirect('/success');
+   mongodb.MongoClient.connect(process.env.MONGODB_URI, function(err, db) {
+		if (err) throw err;
+		var applications = db.collection('applications');
+		applications.insert({application})
+	})
 })
 
 app.listen(process.env.PORT || 5000, function () {
