@@ -1359,8 +1359,7 @@ body.modern .testimonials .owl-controls .owl-next {
       bottom: 0;
     }
     .hoverable .hover,
-    .hoverable .normal,
-    .hoverable:hover .hover img{
+    .hoverable .normal{
         transition: opacity .5s;
         -o-transition: opacity .5s;
         -ms-transition: opacity .5s;
