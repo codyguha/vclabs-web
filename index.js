@@ -1,6 +1,11 @@
 var express = require('express');
 var app = express();
 var path = require('path');
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
@@ -16,10 +21,9 @@ app.get('/jobs', function (req, res) {
   res.sendFile(path.join(__dirname + '/jobs.html'));
 });
 
-app.post('/Jobapp', function (req, res) {
-		alert('APPLICATION SUBMITTED SUCCESSFULLY!')
-		res.sendFile(path.join(__dirname + '/index.html'));
-});
+app.post('/Jobapp',function(request,response){
+   console.log(request.body) //you will get your data in this as object.
+})
 
 
 app.listen(process.env.PORT || 5000, function () {
