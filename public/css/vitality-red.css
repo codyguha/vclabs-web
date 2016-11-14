@@ -601,10 +601,10 @@ aside.cta-quote span.quote {
 .about-carousel .owl-controls .owl-next {
   right: 15px;
 }
-.services .media {
+ .media {
   margin-bottom: 30px;
 }
-.services .media i.fa {
+ .media i.fa {
   height: 75px;
   width: 75px;
   line-height: 70px;
@@ -613,37 +613,37 @@ aside.cta-quote span.quote {
   border-radius: 100%;
   font-size: 30px;
 }
-.services .media .media-body {
+ .media .media-body {
   min-width: none;
   padding-left: 15px;
 }
-.services .media .media-body h3 {
+ .media .media-body h3 {
   margin-bottom: 15px;
 }
-.services .media .media-body ul {
+ .media .media-body ul {
   list-style: inside;
   padding: 0;
 }
-.services .media .media-body ul li {
+ .media .media-body ul li {
   margin-bottom: 10px;
 }
 @media (min-width: 390px) {
-  .services .media .media-body {
+   .media .media-body {
     min-width: 260px;
   }
 }
 @media (min-width: 992px) {
-  .services .media .media-body {
+   .media .media-body {
     min-width: 193px;
   }
 }
 @media (min-width: 1199px) {
-  .services .media .media-body {
+   .media .media-body {
     min-width: 260px;
   }
 }
 @media (min-width: 992px) {
-  .services .media {
+   .media {
     margin-bottom: 0;
   }
 }
