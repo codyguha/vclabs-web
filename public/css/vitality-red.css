@@ -614,6 +614,7 @@ aside.cta-quote span.quote {
   font-size: 30px;
 }
  .media .media-body {
+  text-align: left;
   min-width: none;
   padding-left: 15px;
 }
