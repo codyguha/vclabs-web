@@ -18,6 +18,7 @@ app.get('/jobs', function (req, res) {
 
 app.post('/Jobapp', function (req, res) {
 		alert('APPLICATION SUBMITTED SUCCESSFULLY!')
+		res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 
