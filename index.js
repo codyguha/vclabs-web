@@ -22,7 +22,7 @@ app.get('/jobs', function (req, res) {
 
 app.post('/jobapp',function(req,res){
    console.log(JSON.stringify(req.body)) //you will get your data in this as object.
-   res.redirect('/website');
+   // res.redirect('/website');
 })
 
 app.listen(process.env.PORT || 5000, function () {
