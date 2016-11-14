@@ -1370,6 +1370,9 @@ body.modern .testimonials .owl-controls .owl-next {
       opacity:0;
     }
     .hoverable:hover .hover {
+      opacity:1;
+    }
+    .hoverable:hover .hover img{
       opacity:0.5;
     }
 
