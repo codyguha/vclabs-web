@@ -39,7 +39,7 @@ app.post('/jobapp',function(req,res){
 app.post('/contact',function(req,res){
 	console.log(JSON.stringify(req.body))
    var application = req.body //you will get your data in this as object.
-   res.redirect('/website');
+   res.redirect('/success');
    mongodb.MongoClient.connect(process.env.MONGODB_URI, function(err, db) {
 		if (err) throw err;
 		var contact = db.collection('contacts');
