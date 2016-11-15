@@ -36,5 +36,16 @@ app.post('/jobapp',function(req,res){
 	})
 })
 
+app.post('/contact',function(req,res){
+	console.log(JSON.stringify(req.body))
+   var application = req.body //you will get your data in this as object.
+   res.redirect('/website');
+   mongodb.MongoClient.connect(process.env.MONGODB_URI, function(err, db) {
+		if (err) throw err;
+		var contact = db.collection('contacts');
+		applications.insert({contact})
+	})
+})
+
 app.listen(process.env.PORT || 5000, function () {
 });
