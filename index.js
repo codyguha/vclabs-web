@@ -28,6 +28,9 @@ app.get('/taketenvideo', function (req, res) {
 app.get('/success',function(req,res){
    res.sendFile(path.join(__dirname + '/success.html'));
 })
+app.get('/denied',function(req,res){
+   res.sendFile(path.join(__dirname + '/denied.html'));
+})
 
 app.post('/backdoor',function(req,res){
   console.log(JSON.stringify(req.body))
@@ -37,7 +40,7 @@ app.post('/backdoor',function(req,res){
    if (username === "user007" || password === "12345678"){
       res.redirect('/taketenvideo');
    } else {
-      res.redirect('/website');
+      res.redirect('/denied');
    }
 })
 
