@@ -539,6 +539,7 @@ aside.cta-quote span.quote {
   opacity: 0.5;
 }
 .about-carousel .item .caption {
+  background-color: #222;
   padding: 15px;
   color: rgba(255, 255, 255, 0.7);
   width: 100%;
