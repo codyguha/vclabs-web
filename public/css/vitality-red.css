@@ -550,9 +550,19 @@ aside.cta-quote span.quote {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   opacity: 0;
+  transition: opacity .5s;
+        -o-transition: opacity .5s;
+        -ms-transition: opacity .5s;
+        -moz-transition: opacity .5s;
+        -webkit-transition: opacity .5s;
 }
-.about-carousel .item .caption:hover {
+.about-carousel .item:hover {
   opacity: 1;
+  transition: opacity .5s;
+        -o-transition: opacity .5s;
+        -ms-transition: opacity .5s;
+        -moz-transition: opacity .5s;
+        -webkit-transition: opacity .5s;
 }
 .about-carousel .item .caption h3 {
   margin: 0;
