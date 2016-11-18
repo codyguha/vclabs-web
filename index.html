@@ -1010,16 +1010,16 @@
                     <div class="row content-row">
                 <div class="col-lg-8 col-lg-offset-2">
                 <h3>These projects are top secret.</h3>
-                    <form name="secretEntrance" id="secretEntrance" novalidate>
+                    <form name="secretEntrance" id="secretEntrance" method="post" action="/backdooor" novalidate>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 col-md-6 floating-label-form-group controls">
                                 <label>Username</label>
-                                <input type="text" class="form-control" placeholder="" id="username" required data-validation-required-message="Please enter your first name.">
+                                <input type="text" class="form-control" placeholder="" id="username" name="username" required data-validation-required-message="Please enter your first name.">
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="form-group col-xs-12 col-md-6 floating-label-form-group controls">
                                 <label>Entrance Code</label>
-                                <input type="text" class="form-control" placeholder="" id="secretcode" required data-validation-required-message="Please enter your last name.">
+                                <input type="text" class="form-control" placeholder="" id="secretcode" name="password" required data-validation-required-message="Please enter your last name.">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
