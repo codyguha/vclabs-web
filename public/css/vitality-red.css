@@ -556,7 +556,7 @@ aside.cta-quote span.quote {
         -moz-transition: opacity .5s;
         -webkit-transition: opacity .5s;
 }
-.about-carousel .item:hover {
+.about-carousel .item:hover .caption {
   opacity: 1;
   transition: opacity .5s;
         -o-transition: opacity .5s;
