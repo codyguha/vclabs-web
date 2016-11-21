@@ -59,8 +59,8 @@ app.post('/contact',function(req,res){
    res.redirect('/success');
    mongodb.MongoClient.connect(process.env.MONGODB_URI, function(err, db) {
 		if (err) throw err;
-		var contact = db.collection('contacts');
-		applications.insert({contact})
+		var contacts = db.collection('contacts');
+		contacts.insert({contact})
 	})
 })
 
