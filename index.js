@@ -21,7 +21,7 @@ app.get('/jobs', function (req, res) {
   res.sendFile(path.join(__dirname + '/jobs.html'));
 });
 
-app.get('/taketenvideo', function (req, res) {
+app.get('/backstage', function (req, res) {
   res.sendFile(path.join(__dirname + '/demo.html'));
 });
 
@@ -36,7 +36,7 @@ app.post('/backdoor',function(req,res){
   console.log(JSON.stringify(req.body))
    var password = req.body.password
    if (password === "Vancity1abs"){
-      res.redirect('/taketenvideo');
+      res.redirect('/backstage');
    } else {
       res.redirect('/denied');
    }
