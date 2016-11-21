@@ -35,7 +35,6 @@ app.get('/denied',function(req,res){
 app.post('/backdoor',function(req,res){
   console.log(JSON.stringify(req.body))
    var password = req.body.password
-   console.log(username, password)
    if (password === "Vancity1abs"){
       res.redirect('/taketenvideo');
    } else {
