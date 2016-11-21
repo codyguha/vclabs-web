@@ -48,7 +48,7 @@ $(document).ready(function() {
 
     // Owl Carousel Settings
     $(".about-carousel").owlCarousel({
-        items: 3,
+        items: 2,
         navigation: true,
         pagination: false,
         navigationText: [
