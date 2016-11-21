@@ -1052,7 +1052,7 @@ font-weight: 900;
     background-attachment: scroll;
   }
   .pricing .pricing-item {
-
+    font-size: 19px;
   }
   .pricing .pricing-item.featured-first {
     margin-right: -15px;
