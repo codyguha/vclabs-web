@@ -568,6 +568,11 @@ aside.cta-quote span.quote {
 .about-carousel .item .caption h3 {
   margin: 0;
 }
+.about-carousel .item img {
+  height: 400px;
+  display: block;
+  width: 100%;
+}
 .about-carousel .item .caption hr {
   margin: 5px auto;
   max-width: 50px;
