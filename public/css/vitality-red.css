@@ -1051,9 +1051,6 @@ font-weight: 900;
   .pricing {
     background-attachment: scroll;
   }
-  .pricing .pricing-item p{
-    font-size: 19px;
-  }
   .pricing .pricing-item.featured-first {
     margin-right: -15px;
     margin-top: 15px;
