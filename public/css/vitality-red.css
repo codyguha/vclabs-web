@@ -1433,3 +1433,9 @@ body.modern .testimonials .owl-controls .owl-next {
   border-bottom: 3px solid transparent;
   border-top: 3px solid #8F0808;
 }
+
+#quote-scott {
+  font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B";
+  font-style: normal;
+  font-weight: 300;
+}
