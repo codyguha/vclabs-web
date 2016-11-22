@@ -29,7 +29,7 @@ app.get('/success',function(req,res){
    res.sendFile(path.join(__dirname + '/success.html'));
 })
 app.get('/denied',function(req,res){
-   res.sendFile(path.join(__dirname + '/denied.html'));
+   res.sendFile(path.join(__dirname + '/deny.html'));
 })
 
 app.post('/backdoor',function(req,res){
