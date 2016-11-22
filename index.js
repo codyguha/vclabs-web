@@ -28,7 +28,7 @@ app.get('/backstage', function (req, res) {
 app.get('/success',function(req,res){
    res.sendFile(path.join(__dirname + '/success.html'));
 })
-app.get('/denied',function(req,res){
+app.get('/failure',function(req,res){
    res.sendFile(path.join(__dirname + '/deny.html'));
 })
 
@@ -38,7 +38,7 @@ app.post('/backdoor',function(req,res){
    if (password === "Vancity1abs"){
       res.redirect('/backstage');
    } else {
-      res.redirect('/denied');
+      res.redirect('/failure');
    }
 })
 
