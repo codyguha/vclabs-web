@@ -9,7 +9,11 @@ var wellknown = require('nodemailer-wellknown');
 // create reusable transporter object using the default SMTP transport
 var transporter = nodemailer.createTransport({
   service: 'godaddy',
-  use_authentication: true
+  use_authentication: true,
+  auth: {
+        user: 'cody@vclabs.ca',
+        pass: 'secretl0l'
+    }
 });
 
 var config = wellknown('Godaddy');
@@ -25,7 +29,7 @@ app.use(express.static('public'));
 // setup e-mail data with unicode symbols
 var mailOptions = {
     from: '"Fred Foo 👥" <foo@blurdybloop.com>', // sender address
-    to: 'bar@blurdybloop.com, baz@blurdybloop.com', // list of receivers
+    to: 'cody@vclabs.ca', // list of receivers
     subject: 'Hello ✔', // Subject line
     text: 'Hello world 🐴', // plaintext body
     html: '<b>Hello world 🐴</b>' // html body
