@@ -54,6 +54,15 @@ app.post('/jobapp',function(req,res){
 		var applications = db.collection('applications');
 		applications.insert({application})
 	})
+  var data = {
+    from: req.body.email,
+    to: 'cody@vclabs.ca',
+    subject: 'Application From: '+req.body.first_name+ " "+req.body.last_name+" <"+req.body.email+">",
+    text: req.body
+  };
+  mailgun.messages().send(data, function (error, body) {
+    console.log(body);
+  });
 })
 
 app.post('/contact',function(req,res){
@@ -67,7 +76,7 @@ app.post('/contact',function(req,res){
 	})
   var data = {
     from: req.body.email,
-    to: 'cody@vclabs.ca',
+    to: 'info@vclabs.ca',
     subject: 'Contact From: '+req.body.name,
     text: req.body.message
   };
