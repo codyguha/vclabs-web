@@ -99,7 +99,7 @@ $(document).ready(function() {
     });
 
     $('.mix').magnificPopup({
-        type: 'image',
+        type: 'iframe',
         image: {
             titleSrc: 'title'
         }

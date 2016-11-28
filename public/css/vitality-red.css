@@ -539,9 +539,10 @@ aside.cta-quote span.quote {
   opacity: 0.5;
 }
 .about-carousel .item .caption {
+  background-color: #222;
   padding: 15px;
   color: rgba(255, 255, 255, 0.7);
-  width: 100%;
+  width: 66%;
   margin: auto;
   position: absolute;
   top: 50%;
@@ -549,6 +550,20 @@ aside.cta-quote span.quote {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity .5s;
+        -o-transition: opacity .5s;
+        -ms-transition: opacity .5s;
+        -moz-transition: opacity .5s;
+        -webkit-transition: opacity .5s;
+}
+.about-carousel .item:hover .caption {
+  opacity: 1;
+  transition: opacity .5s;
+        -o-transition: opacity .5s;
+        -ms-transition: opacity .5s;
+        -moz-transition: opacity .5s;
+        -webkit-transition: opacity .5s;
 }
 .about-carousel .item .caption h3 {
   margin: 0;
@@ -1036,9 +1051,6 @@ font-weight: 900;
   .pricing {
     background-attachment: scroll;
   }
-  .pricing .pricing-item {
-
-  }
   .pricing .pricing-item.featured-first {
     margin-right: -15px;
     margin-top: 15px;
@@ -1378,4 +1390,53 @@ body.modern .testimonials .owl-controls .owl-next {
     .hoverable:hover .hover {
       opacity:1;
     }
+.ribbon {
+  position: absolute;
+  left: 10px; top: 16px;
+  z-index: 2;
+  overflow: hidden;
+  width: 75px; height: 75px;
+  text-align: right;
+}
+.ribbon span {
+  font-size: 10px;
+  font-weight: bold;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  width: 100px;
+  display: block;
+  background: #79A70A;
+  background: linear-gradient(#F70505 0%, #8F0808 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 19px; left: -21px;
+}
+.ribbon span::before {
+  content: "";
+  position: absolute; left: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid #8F0808;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #8F0808;
+}
+.ribbon span::after {
+  content: "";
+  position: absolute; right: 0px; top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #8F0808;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #8F0808;
+}
 
+#quote-scott {
+  font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B";
+  font-style: normal;
+  font-weight: 300;
+  margin-top: 18px;
+}
