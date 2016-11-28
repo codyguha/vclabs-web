@@ -12,6 +12,9 @@ var transporter = nodemailer.createTransport({
   auth: {
         user: 'cody@vclabs.ca',
         pass: 'secretl0l'
+    },
+    tls: {
+        ciphers:'SSLv3'
     }
 });
 
