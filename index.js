@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 
 // create reusable transporter object using the default SMTP transport
-var transport = nodemailer.createTransport("SMTP", {
+var transporter = nodemailer.createTransport("SMTP", {
     host: "smtp-mail.outlook.com", // hostname
     secureConnection: false, // TLS requires secureConnection to be false
     port: 587, // port for secure SMTP
