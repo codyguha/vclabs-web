@@ -66,10 +66,10 @@ app.post('/contact',function(req,res){
 		contacts.insert({contact})
 	})
   var data = {
-    from: 'Excited User <'+req.body.email+'>',
+    from: req.body.email,
     to: 'cody@vclabs.ca',
-    subject: 'Hello',
-    text: 'Testing some Mailgun awesomness!'
+    subject: 'Contact From: '+req.body.name,
+    text: req.body.message
   };
   mailgun.messages().send(data, function (error, body) {
     console.log(body);
