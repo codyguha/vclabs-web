@@ -4,11 +4,14 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
+var wellknown = require('nodemailer-wellknown');
 
 // create reusable transporter object using the default SMTP transport
-var transporter = nodemailer.createTransport('smtps://cody%40vclabs.ca:secretl0l@smtpout.secureserver.net');
+var transporter = nodemailer.createTransport({
+  service: 'godaddy'
+});
 
-
+var config = wellknown('Godaddy');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
