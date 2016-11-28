@@ -8,10 +8,15 @@ var nodemailer = require('nodemailer');
 // create reusable transporter object using the default SMTP transport
 var transporter = nodemailer.createTransport('smtps://cody%40vclabs.ca:secretl0l@smtpout.secureserver.net');
 
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
+
+// app.get('/', function (req, res) {
+//   res.sendFile(path.join(__dirname + '/index.html'));
+// });
 
 // setup e-mail data with unicode symbols
 var mailOptions = {
@@ -22,7 +27,7 @@ var mailOptions = {
     html: '<b>Hello world 🐴</b>' // html body
 };
 
-app.get('/website', function (req, res) {
+app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
@@ -30,8 +35,25 @@ app.get('/jobs', function (req, res) {
   res.sendFile(path.join(__dirname + '/jobs.html'));
 });
 
+app.get('/backstage', function (req, res) {
+  res.sendFile(path.join(__dirname + '/demo.html'));
+});
+
 app.get('/success',function(req,res){
    res.sendFile(path.join(__dirname + '/success.html'));
+})
+app.get('/noaccess',function(req,res){
+   res.sendFile(path.join(__dirname + '/deny.html'));
+})
+
+app.post('/backdoor',function(req,res){
+  console.log(JSON.stringify(req.body))
+   var password = req.body.password
+   if (password === "Vancity1abs"){
+      res.redirect('/backstage');
+   } else {
+      res.redirect('/noaccess');
+   }
 })
 
 app.post('/jobapp',function(req,res){
@@ -47,13 +69,12 @@ app.post('/jobapp',function(req,res){
 
 app.post('/contact',function(req,res){
 	console.log(JSON.stringify(req.body))
-   var application = req.body //you will get your data in this as object.
+   var contact = req.body //you will get your data in this as object.
    res.redirect('/success');
    mongodb.MongoClient.connect(process.env.MONGODB_URI, function(err, db) {
 		if (err) throw err;
-		var contact = db.collection('contacts');
-		applications.insert({contact})
-    // send mail with defined transport object
+		var contacts = db.collection('contacts');
+		contacts.insert({contact})
     transporter.sendMail(mailOptions, function(error, info){
         if(error){
             return console.log(error);
