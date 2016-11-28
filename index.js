@@ -8,7 +8,8 @@ var wellknown = require('nodemailer-wellknown');
 
 // create reusable transporter object using the default SMTP transport
 var transporter = nodemailer.createTransport({
-  service: 'godaddy'
+  service: 'godaddy',
+  use_authentication: true
 });
 
 var config = wellknown('Godaddy');
