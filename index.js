@@ -58,7 +58,7 @@ app.post('/jobapp',function(req,res){
     from: req.body.email,
     to: 'cody@vclabs.ca',
     subject: 'Application From: '+req.body.first_name+ " "+req.body.last_name+" <"+req.body.email+">",
-    text: req.body
+    text: "position: " + req.body.position + ", reason: " +req.body.reason
   };
   mailgun.messages().send(data, function (error, body) {
     console.log(body);
