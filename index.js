@@ -3,22 +3,9 @@ var mongodb = require('mongodb');
 var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
-var nodemailer = require('nodemailer');
-
-// create reusable transporter object using the default SMTP transport
-var transporter = nodemailer.createTransport({
-    host: "smtp-mail.outlook.com", // hostname
-    secureConnection: false, // TLS requires secureConnection to be false
-    port: 587, // port for secure SMTP
-    auth: {
-        user: "cody@vclabs.ca",
-        pass: "secretl0l"
-    },
-    tls: {
-        ciphers:'SSLv3'
-    }
-});
-
+var api_key = 'key-ee95f4d7aef1d9c11d3a8ef94a9bd687';
+var domain = 'sandbox771cbaa483844883b70b3cf9f943c042.mailgun.org';
+var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,15 +15,6 @@ app.use(express.static('public'));
 // app.get('/', function (req, res) {
 //   res.sendFile(path.join(__dirname + '/index.html'));
 // });
-
-// setup e-mail data with unicode symbols
-var mailOptions = {
-    from: '"Fred Foo 👥" <foo@blurdybloop.com>', // sender address
-    to: 'cody@vclabs.ca', // list of receivers
-    subject: 'Hello ✔', // Subject line
-    text: 'Hello world 🐴', // plaintext body
-    html: '<b>Hello world 🐴</b>' // html body
-};
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
@@ -86,13 +64,16 @@ app.post('/contact',function(req,res){
 		if (err) throw err;
 		var contacts = db.collection('contacts');
 		contacts.insert({contact})
-    transporter.sendMail(mailOptions, function(error, info){
-        if(error){
-            return console.log(error);
-        }
-        console.log('Message sent: ' + info.response);
-    })
 	})
+  var data = {
+    from: 'Excited User <'+req.body.email+'>',
+    to: 'cody@vclabs.ca',
+    subject: 'Hello',
+    text: 'Testing some Mailgun awesomness!'
+  };
+  mailgun.messages().send(data, function (error, body) {
+    console.log(body);
+  });
 })
 
 app.listen(process.env.PORT || 5000, function () {
