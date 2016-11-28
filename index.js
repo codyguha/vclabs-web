@@ -5,18 +5,17 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
 var wellknown = require('nodemailer-wellknown');
-
+var config = wellknown('Outlook365');
 // create reusable transporter object using the default SMTP transport
 var transporter = nodemailer.createTransport({
-  service: 'godaddy',
-  use_authentication: true,
+  service: 'outlook365',
   auth: {
         user: 'cody@vclabs.ca',
         pass: 'secretl0l'
     }
 });
 
-var config = wellknown('Godaddy');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
