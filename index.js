@@ -4,14 +4,15 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 var nodemailer = require('nodemailer');
-var wellknown = require('nodemailer-wellknown');
-var config = wellknown('Outlook365');
+
 // create reusable transporter object using the default SMTP transport
-var transporter = nodemailer.createTransport({
-  service: 'outlook365',
-  auth: {
-        user: 'cody@vclabs.ca',
-        pass: 'secretl0l'
+var transport = nodemailer.createTransport("SMTP", {
+    host: "smtp-mail.outlook.com", // hostname
+    secureConnection: false, // TLS requires secureConnection to be false
+    port: 587, // port for secure SMTP
+    auth: {
+        user: "cody@vclabs.ca",
+        pass: "secretl0l"
     },
     tls: {
         ciphers:'SSLv3'
