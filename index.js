@@ -54,13 +54,13 @@ app.post('/jobapp',function(req,res){
 		var applications = db.collection('applications');
 		applications.insert({application})
 	})
-  var data = {
+  var mail = {
     from: req.body.email,
-    to: 'cody@vclabs.ca',
+    to: 'info@vclabs.ca',
     subject: 'Application From: '+req.body.firstname+ " "+req.body.lastname+" <"+req.body.email+">",
-    text: "position: " + req.body.position + "\nreason: " +req.body.reason+ "\nwebsite: " +req.body.website
+    text: "position: " + req.body.position + "\nreason: " +req.body.reason+ "\nwebsite: " +req.body.website+ "\linkedin: " +req.body.linkedin+ "\nemail: " +req.body.email+ "\nphone: " +req.body.phone
   };
-  mailgun.messages().send(data, function (error, body) {
+  mailgun.messages().send(mail, function (error, body) {
     console.log(body);
   });
 })
@@ -74,13 +74,13 @@ app.post('/contact',function(req,res){
 		var contacts = db.collection('contacts');
 		contacts.insert({contact})
 	})
-  var data = {
+  var mail = {
     from: req.body.email,
     to: 'info@vclabs.ca',
     subject: 'Contact From: '+req.body.name,
-    text: req.body.message
+    text: req.body.message + "\n phone: " + req.body.phone + "\n email: " + req.body.email
   };
-  mailgun.messages().send(data, function (error, body) {
+  mailgun.messages().send(mail, function (error, body) {
     console.log(body);
   });
 })
