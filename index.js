@@ -56,7 +56,7 @@ app.post('/jobapp',function(req,res){
 	})
   var mail = {
     from: req.body.email,
-    to: 'info@vclabs.ca',
+    to: 'cody@vclabs.ca',
     subject: 'Application From: '+req.body.firstname+ " "+req.body.lastname+" <"+req.body.email+">",
     text: "position: " + req.body.position + "\nreason: " +req.body.reason+ "\nwebsite: " +req.body.website+ "\linkedin: " +req.body.linkedin+ "\nemail: " +req.body.email+ "\nphone: " +req.body.phone
   };
@@ -76,7 +76,7 @@ app.post('/contact',function(req,res){
 	})
   var mail = {
     from: req.body.email,
-    to: 'info@vclabs.ca',
+    to: 'cody@vclabs.ca',
     subject: 'Contact From: '+req.body.name,
     text: req.body.message + "\n phone: " + req.body.phone + "\n email: " + req.body.email
   };
