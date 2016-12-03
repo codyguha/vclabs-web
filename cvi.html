@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Canadian Segmentation</title>
+    <style>
+      body {
+        font-family: "Helvetica", Arial, sans-serif;
+        text-align: center;
+        max-width: 1140px;
+        margin: 0 auto; }
+
+      input[type=radio], input[type=checkbox] {
+        display: none; }
+
+      input[type=radio] + label, input[type=checkbox] + label {
+        display: inline-block;
+        color: #333;
+        vertical-align: middle;
+        cursor: pointer;
+        background-color: #ffffff;
+        border: 1px solid #b1b1b1;
+        border-radius: 5px;
+        padding: 24px;
+        min-width: 400px; }
+        @media (max-width: 767px) {
+          input[type=radio] + label, input[type=checkbox] + label {
+            min-width: 200px;
+            padding: 16px; } }
+        input[type=radio] + label:hover, input[type=checkbox] + label:hover {
+          background-color: #efefef; }
+
+      input[type=radio]:checked + label, input[type=checkbox]:checked + label {
+        background-image: none;
+        outline: 0;
+        background-color: #efefef; }
+
+      p {
+        font-size: 14px;
+        color: #4a4a4a;
+        letter-spacing: 0px; }
+        p.q_tracker {
+          font-weight: 700;
+          line-height: 14px;
+          margin-top: 40px;
+          color: #ffffff; }
+          @media (max-width: 767px) {
+            p.q_tracker {
+              margin-top: 10px; } }
+
+      h2 {
+        color: #990006; }
+        @media (max-width: 767px) {
+          h2 {
+            font-size: 20px; } }
+
+      h3 {
+        font-style: italic;
+        font-weight: 100;
+        font-size: 24px;
+        color: #4a4a4a;
+        margin-bottom: 120px; }
+        @media (max-width: 767px) {
+          h3 {
+            padding: 0 20px;
+            margin-bottom: 60px; } }
+
+      .question-slider {
+        background-image: url("http://slant.is/_angusreid/images/canada.png");
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        height: 500px;
+        vertical-align: center;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        overflow: hidden; }
+        @media (max-width: 767px) {
+          .question-slider {
+            height: 375px; } }
+        .question-slider .question-wrapper {
+          margin: 0 auto;
+          position: absolute;
+          top: 0;
+          left: 0;
+          -webkit-transition: all 500ms ease-in-out;
+          -moz-transition: all 500ms ease-in-out;
+          -ms-transition: all 500ms ease-in-out;
+          -o-transition: all 500ms ease-in-out;
+          transition: all 500ms ease-in-out; }
+        .question-slider .question {
+          margin-top: 40px;
+          float: left;
+          display: inline-block; }
+          @media (max-width: 767px) {
+            .question-slider .question {
+              margin-top: 10px; }
+              .question-slider .question h3 {
+                margin: 5px 0;
+                font-size: 20px; } }
+          .question-slider .question .intro h3 {
+            font-style: normal;
+            margin: 24px auto;
+            max-width: 600px;
+            padding: 0 20px;
+            line-height: 1.4;
+            letter-spacing: 0px; }
+            @media (max-width: 767px) {
+              .question-slider .question .intro h3 {
+                font-size: 16px;
+                margin: 9px 0;
+                padding: 0 10px; } }
+          .question-slider .question .intro a#get-started {
+            color: #ffffff;
+            text-decoration: none;
+            display: inline-block; }
+            .question-slider .question .intro a#get-started button {
+              font-size: 1.5em;
+              border: none;
+              background-color: #990006;
+              border-radius: 5px;
+              padding: 5px;
+              color: #ffffff; }
+              @media (max-width: 767px) {
+              .question-slider .question .intro a#get-started button {
+                font-size: 16px;
+                padding: 10px; } }
+              .question-slider .question .intro a#get-started button:hover {
+                cursor: pointer;
+                color: #cccccc; }
+          .question-slider .question .answer {
+            padding: 5px 20px; }
+            @media (max-width: 767px) {
+              .question-slider .question .answer {
+                padding: 5px; } }
+          .question-slider .question #classification {
+            font-size: 1.4em; }
+            @media (max-width: 767px) {
+              .question-slider .question #classification h4 {
+                font-size: 14px; } }
+          @media (max-width: 767px) {
+            .question-slider .question .list {
+              font-size: 14px; } }
+          .question-slider .question .list a {
+            display: block;
+            margin: 6px 0; }
+
+      span.result {
+        margin-bottom: 24px;
+        display: inline-block; }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+    function onLoad() {
+    document.getElementById("classification").innerHTML = "Please answer all the questions..";
+    }
+
+      function btnReset(){
+        // Ensure radio butons are enabled
+        jQuery('input[name=Q5]').attr('disabled',false);
+        jQuery('input[name=Q7]').attr('disabled',false);
+        jQuery('input[name=Q8]').attr('disabled',false);
+        jQuery('input[name=Q9]').attr('disabled',false);
+        jQuery('input[name=Q10]').attr('disabled',false);
+        jQuery('input[name=Q11]').attr('disabled',false);
+        jQuery('input[name=Q12]').attr('disabled',false);
+        jQuery('input[name=Q13]').attr('disabled',false);
+        jQuery('input[name=Q14]').attr('disabled',false);
+        jQuery('input[name=Q15]').attr('disabled',false);
+        jQuery('input[name=Q16]').attr('disabled',false);
+        jQuery('input[name=Q21]').attr('disabled',false);
+        jQuery('input[name=Q36]').attr('disabled',false);
+        jQuery('input[name=Q37b]').attr('disabled',false);
+        jQuery('input[name=Q37d]').attr('disabled',false);
+
+        // make sure no radio buttons are selected
+        jQuery('input[name=Q5]').prop('checked',false);
+        jQuery('input[name=Q7]').prop('checked',false);
+        jQuery('input[name=Q8]').prop('checked',false);
+        jQuery('input[name=Q9]').prop('checked',false);
+        jQuery('input[name=Q10]').prop('checked',false);
+        jQuery('input[name=Q11]').prop('checked',false);
+        jQuery('input[name=Q12]').prop('checked',false);
+        jQuery('input[name=Q13]').prop('checked',false);
+        jQuery('input[name=Q14]').prop('checked',false);
+        jQuery('input[name=Q15]').prop('checked',false);
+        jQuery('input[name=Q16]').prop('checked',false);
+        jQuery('input[name=Q21]').prop('checked',false);
+        jQuery('input[name=Q36]').prop('checked',false);
+        jQuery('input[name=Q37b]').prop('checked',false);
+        jQuery('input[name=Q37d]').prop('checked',false);
+      }
+
+      function chkQuestions() {
+        //load responses
+        var q5 = $('input[name=Q5]').filter(':checked').val();
+        var q7 = $('input[name=Q7]').filter(':checked').val();
+        var q8 = $('input[name=Q8]').filter(':checked').val();
+        var q9 = $('input[name=Q9]').filter(':checked').val();
+        var q10 = $('input[name=Q10]').filter(':checked').val();
+        var q11 = $('input[name=Q11]').filter(':checked').val();
+        var q12 = $('input[name=Q12]').filter(':checked').val();
+        var q13 = $('input[name=Q13]').filter(':checked').val();
+        var q14 = $('input[name=Q14]').filter(':checked').val();
+        var q15 = $('input[name=Q15]').filter(':checked').val();
+        var q16 = $('input[name=Q16]').filter(':checked').val();
+        var q21 = $('input[name=Q21]').filter(':checked').val();
+        var q36 = $('input[name=Q36]').filter(':checked').val();
+        var q37b = $('input[name=Q37b]').filter(':checked').val();
+        var q37d = $('input[name=Q37d]').filter(':checked').val();
+
+        if ( //check there is a response for each question
+          typeof(q5) !== 'undefined' &&
+          typeof(q7) !== 'undefined' &&
+          typeof(q8) !== 'undefined' &&
+          typeof(q9) !== 'undefined' &&
+          typeof(q10) !== 'undefined' &&
+          typeof(q11) !== 'undefined' &&
+          typeof(q12) !== 'undefined' &&
+          typeof(q13) !== 'undefined' &&
+          typeof(q14) !== 'undefined' &&
+          typeof(q15) !== 'undefined' &&
+          typeof(q16) !== 'undefined' &&
+          typeof(q21) !== 'undefined' &&
+          typeof(q36) !== 'undefined' &&
+          typeof(q37b) !== 'undefined' &&
+          typeof(q37d) !== 'undefined'
+          ) {
+            // If there's a response for all question, disable the ability to change responses
+            jQuery('input[name=Q5]').attr('disabled',true);
+            jQuery('input[name=Q7]').attr('disabled',true);
+            jQuery('input[name=Q8]').attr('disabled',true);
+            jQuery('input[name=Q9]').attr('disabled',true);
+            jQuery('input[name=Q10]').attr('disabled',true);
+            jQuery('input[name=Q11]').attr('disabled',true);
+            jQuery('input[name=Q12]').attr('disabled',true);
+            jQuery('input[name=Q13]').attr('disabled',true);
+            jQuery('input[name=Q14]').attr('disabled',true);
+            jQuery('input[name=Q15]').attr('disabled',true);
+            jQuery('input[name=Q16]').attr('disabled',true);
+            jQuery('input[name=Q21]').attr('disabled',true);
+            jQuery('input[name=Q36]').attr('disabled',true);
+            jQuery('input[name=Q37b]').attr('disabled',true);
+            jQuery('input[name=Q37d]').attr('disabled',true);
+
+            //calculate and output the classiciation
+            calcClassification();
+          } else {
+            document.getElementById("classification").innerHTML = "Please answer all the questions..";
+          }
+      }
+
+      function calcClassification() {
+        //Load responses into variables, we allready know we've got all of them
+        var q5 = $('input[name=Q5]').filter(':checked').val();
+        var q7 = $('input[name=Q7]').filter(':checked').val();
+        var q8 = $('input[name=Q8]').filter(':checked').val();
+        var q9 = $('input[name=Q9]').filter(':checked').val();
+        var q10 = $('input[name=Q10]').filter(':checked').val();
+        var q11 = $('input[name=Q11]').filter(':checked').val();
+        var q12 = $('input[name=Q12]').filter(':checked').val();
+        var q13 = $('input[name=Q13]').filter(':checked').val();
+        var q14 = $('input[name=Q14]').filter(':checked').val();
+        var q15 = $('input[name=Q15]').filter(':checked').val();
+        var q16 = $('input[name=Q16]').filter(':checked').val();
+        var q21 = $('input[name=Q21]').filter(':checked').val();
+        var q36 = $('input[name=Q36]').filter(':checked').val();
+        var q37b = $('input[name=Q37b]').filter(':checked').val();
+        var q37d = $('input[name=Q37d]').filter(':checked').val();
+
+        //Apply the equation for each segment, remember the 4 of these are relative to the last segment (which =1)
+
+        var segCS = Math.exp(
+           1.324777341 * q5 +
+          -0.439317293 * q7 +
+          -1.141955791 * q8 +
+           0.946527238 * q9 +
+           1.065909437 * q10 +
+           1.856962384 * q11 +
+           0.313054006 * q12 +
+           0.335923336 * q13 +
+          -0.822735827 * q14 +
+           1.418703947 * q15 +
+          -0.705176968 * q16 +
+          -1.339674474 * q21 +
+           0.990574065 * q36 +
+           3.17706193  * q37b +
+          -3.538568365 * q37d +
+          -3.687443765);
+
+        var segPR = Math.exp(
+           0.360924702 * q5 +
+          -4.778865322 * q7 +
+          -0.096688666 * q8 +
+           1.556509672 * q9 +
+           2.000184421 * q10 +
+           0.052231303 * q11 +
+          -1.892051762 * q12 +
+           0.873597825 * q13 +
+          -1.024131769 * q14 +
+           1.058972973 * q15 +
+           1.387828058 * q16 +
+          -1.645821049 * q21 +
+           4.147904236 * q36 +
+           2.471886731 * q37b +
+          -1.551020565 * q37d +
+          -3.344123223);
+
+        var segFBT = Math.exp(
+           1.937264942 * q5 +
+          -2.782925459 * q7 +
+           2.014814213 * q8 +
+           1.738605214 * q9 +
+           0.59702853  * q10 +
+           0.847449727 * q11 +
+          -0.706492853 * q12 +
+           1.961100828 * q13 +
+          -1.677824254 * q14 +
+           1.768624728 * q15 +
+           3.445928658 * q16 +
+          -0.138628647 * q21 +
+           0.746561782 * q36 +
+           1.871286665 * q37b +
+          -2.419686983 * q37d +
+          -11.1287024);
+
+        var segFEE = Math.exp(
+           1.029244103 * q5 +
+          -1.496981598 * q7 +
+          -1.196622034 * q8 +
+           2.94630191  * q9 +
+          -0.551662564 * q10 +
+           1.775545107 * q11 +
+           1.01564184  * q12 +
+           1.850206979 * q13 +
+          -2.918294699 * q14 +
+           2.858187827 * q15 +
+          -0.233789783 * q16 +
+           0.454961524 * q21 +
+           2.491671372 * q36 +
+           0.997044403 * q37b +
+          -1.273910456 * q37d +
+          -10.76338147);
+
+          //Highest scoring segment wins!   Output the right text.
+          switch(Math.max(segCS, segPR, segFBT, segFEE, 1)) {
+            case segCS:
+              document.getElementById("classification").innerHTML = "<span class='result'>You're a <b>Cautious Skeptic</b>!</span><br>" + "<a href='https://www.facebook.com/' target='_blank'><img src='http://angusreidorg.staging.wpengine.com/wp-content/uploads/2016/09/facebook.png' alt='Share your results'></a> <a href='https://twitter.com/intent/tweet?text=I%27m%20a%20Cautious%20Skeptic!%20Take%20the%20test%20for%20yourself.&url=http://angusreid.org/canadian-values-index/' target='_blank'><img src='http://angusreidorg.staging.wpengine.com/wp-content/uploads/2016/10/share-twitter-button-01-e1475170529219.png' alt='Tweet your results'></a>" + "<h4>Click below to read more about your segment...</h4>";
+              break;
+            case segPR:
+              document.getElementById("classification").innerHTML = "<span class='result'>You're a <b>Permissive Reformer</b>!</span><br>" + "<a href='https://www.facebook.com/' target='_blank'><img src='http://angusreidorg.staging.wpengine.com/wp-content/uploads/2016/09/facebook.png' alt='Share your results'></a> <a href='https://twitter.com/intent/tweet?text=I%27m%20a%20Permissive%20Reformer!%20Take%20the%20test%20for%20yourself.&url=http://angusreid.org/canadian-values-index/' target='_blank'><img src='http://angusreidorg.staging.wpengine.com/wp-content/uploads/2016/10/share-twitter-button-01-e1475170529219.png' alt='Tweet your results'></a>" + "<h4>Click below to read more about your segment...</h4>";
+              break;
+            case segFBT:
+              document.getElementById("classification").innerHTML = "<span class='result'>You're a <b>Faith Based Traditionalist</b>!</span><br>" + "<a href='https://www.facebook.com/' target='_blank'><img src='http://angusreidorg.staging.wpengine.com/wp-content/uploads/2016/09/facebook.png' alt='Share your results'></a> <a href='https://twitter.com/intent/tweet?text=I%27m%20a%20Faith%20Based%20Traditionalist!%20Take%20the%20test%20for%20yourself.&url=http://angusreid.org/canadian-values-index/' target='_blank'><img src='http://angusreidorg.staging.wpengine.com/wp-content/uploads/2016/10/share-twitter-button-01-e1475170529219.png' alt='Tweet your results'></a>" + "<h4>Click below to read more about your segment...</h4>";
+              break;
+            case segFEE:
+              document.getElementById("classification").innerHTML = "<span class='result'>You're a <b>Free Enterprise Enthusiast</b>!</span><br>" + "<a href='https://www.facebook.com/' target='_blank'><img src='http://angusreidorg.staging.wpengine.com/wp-content/uploads/2016/09/facebook.png' alt='Share your results'></a> <a href='https://twitter.com/intent/tweet?text=I%27m%20a%20Free%20Enterprise%20Enthusiast!%20Take%20the%20test%20for%20yourself.&url=http://angusreid.org/canadian-values-index/' target='_blank'><img src='http://angusreidorg.staging.wpengine.com/wp-content/uploads/2016/10/share-twitter-button-01-e1475170529219.png' alt='Tweet your results'></a>" + "<h4>Click below to read more about your segment...</h4>";
+              break;
+            case 1:
+              document.getElementById("classification").innerHTML = "<span class='result'>You're a <b>Public Sector Proponent</b>!</span><br>" + "<a href='https://www.facebook.com/' target='_blank'><img src='http://angusreidorg.staging.wpengine.com/wp-content/uploads/2016/09/facebook.png' alt='Share your results'></a> <a href='https://twitter.com/intent/tweet?text=I%27m%20a%20Public%20Sector%20Proponent!%20Take%20the%20test%20for%20yourself.&url=http://angusreid.org/canadian-values-index/' target='_blank'><img src='http://angusreidorg.staging.wpengine.com/wp-content/uploads/2016/10/share-twitter-button-01-e1475170529219.png' alt='Tweet your results'></a>" + "<h4>Click below to read more about your segment...</h4>";
+              break;
+            default:
+              document.getElementById("classification").innerHTML = "You shouldn't see this result";
+              break;
+            }
+  //document.getElementById("classification").innerHTML = ad;
+          }
+</script>
+
+  </head>
+  <body onLoad="onLoad()">
+    <div class="title">
+      <h2>Canadian Values Index - Which Segment do you fall into?</h2>
+      <p class="q_tracker">Question <span id="current-q">1</span>/15</p>
+    </div>
+
+    <div class="question-slider">
+      <div class="question-wrapper">
+        <div class="question" id="q_0">
+          <div class="intro">
+            <h3>The Angus Reid Institute's </font color><a href="http://www.angusreid.org/canada-values" target="_blank">national poll conducted in partnership with the CBC </a> identifies five Canadian mindsets when it comes to values.</h3>
+            <h3>Please choose one answer for each of the following questions on a broad range of topics in Canadian life</h3>
+            <h3>Your answers will determine with which of the five mindsets you are most aligned.</h3>
+            <a id="get-started" href="#"><button>Get started</button></a>
+          </div>
+        </div>
+        <div class="question" id="q_1">
+          <h3>Canadian society should work towards...</h3>
+          <div class="answer a_1">
+            <input type="radio" id="Q5_1" name="Q5" value=1 onchange="chkQuestions()" />
+            <label for="Q5_1">Greater acceptance of people who are LGBTQ (lesbian, gay, bi-sexual, transgender, queer)</label>
+          </div>
+          <div class="answer a_2">
+            <input type="radio" id="Q5_2" name="Q5" value=2 onchange="chkQuestions()" />
+            <label for="Q5_2">More recognition of the importance of traditional families where a man is married to a woman</label>
+          </div>
+        </div>
+        <div class="question" id="q_2">
+          <h3>Canada's immigration and refugee policies should...</h3>
+          <div class="answer a_1">
+            <input type="radio" id="Q7_1" name="Q7" value=1 onchange="chkQuestions()" />
+            <label for="Q7_1">Give priority to people in crisis abroad </label>
+          </div>
+          <div class="answer a_2">
+            <input type="radio" id="Q7_2" name="Q7" value=2 onchange="chkQuestions()" />
+            <label for="Q7_2">Give priority to Canada's own economic and workforce needs</label>
+          </div>
+        </div>
+        <div class="question" id="q_3">
+          <h3>In Canada, we should...</h3>
+          <div class="answer a_1">
+            <input type="radio" id="Q8_1" name="Q8" value=1 onchange="chkQuestions()" />
+            <label for="Q8_1">Keep God and religion completely out of public life</label>
+          </div>
+          <div class="answer a_2">
+            <input type="radio" id="Q8_2" name="Q8" value=2 onchange="chkQuestions()" />
+            <label for="Q8_2">Publicly celebrate the role of faith in our collective lives</label>
+          </div>
+        </div>
+        <div class="question" id="q_4">
+          <h3>In the Canadian workplace:</h3>
+          <div class="answer a_1">
+            <input type="radio" id="Q9_1" name="Q9" value=1 onchange="chkQuestions()" />
+            <label for="Q9_1">Large public companies should be required to recruit and hire women so they're equally represented in senior management </label>
+          </div>
+          <div class="answer a_2">
+            <input type="radio" id="Q9_2" name="Q9" value=2 onchange="chkQuestions()" />
+            <label for="Q9_2">Leave it up to large public companies to make their own hiring decisions, even if it means fewer women in senior management </label>
+          </div>
+        </div>
+        <div class="question" id="q_5">
+          <h3>Regarding health care, we should...</h3>
+          <div class="answer a_1">
+            <input type="radio" id="Q10_1" name="Q10" value=1 onchange="chkQuestions()" />
+            <label for="Q10_1">Encourage private medical clinics outside of the public health care system to give Canadians more choice </label>
+          </div>
+          <div class="answer a_2">
+            <input type="radio" id="Q10_2" name="Q10" value=2 onchange="chkQuestions()" />
+            <label for="Q10_2">Prohibit private medical clinics outside of the public health care system to preserve the principle of equal access </label>
+          </div>
+        </div>
+        <div class="question" id="q_6">
+          <h3>Canada should...</h3>
+          <div class="answer a_1">
+            <input type="radio" id="Q11_1" name="Q11" value=1 onchange="chkQuestions()" />
+            <label for="Q11_1">Expand policies aimed at improving the situation for Indigenous Canadians</label>
+          </div>
+          <div class="answer a_2">
+            <input type="radio" id="Q11_2" name="Q11" value=2 onchange="chkQuestions()" />
+            <label for="Q11_2">Work to remove any special status and programs for Indigenous Canadians</label>
+          </div>
+        </div>
+        <div class="question" id="q_7">
+          <h3>There should be...</h3>
+          <div class="answer a_1">
+            <input type="radio" id="Q12_1" name="Q12" value=1 onchange="chkQuestions()" />
+            <label for="Q12_1">More public support for the poor, the disadvantaged and those in economic trouble</label>
+          </div>
+          <div class="answer a_2">
+            <input type="radio" id="Q12_2" name="Q12" value=2 onchange="chkQuestions()" />
+            <label for="Q12_2">More emphasis on a system that rewards hard work and initiative </label>
+          </div>
+        </div>
+        <div class="question" id="q_8">
+          <h3>Overall, Canada's policies should...</h3>
+          <div class="answer a_1">
+            <input type="radio" id="Q13_1" name="Q13" value=1 onchange="chkQuestions()" />
+            <label for="Q13_1">Emphasize environmental protection over economic growth</label>
+          </div>
+          <div class="answer a_2">
+            <input type="radio" id="Q13_2" name="Q13" value=2 onchange="chkQuestions()" />
+            <label for="Q13_2">Emphasize economic growth over environmental protection</label>
+          </div>
+        </div>
+        <div class="question" id="q_9">
+          <h3>Overall, it would be better to...</h3>
+          <div class="answer a_1">
+            <input type="radio" id="Q14_1" name="Q14" value=1 onchange="chkQuestions()" />
+            <label for="Q14_1">Leave the economy more to the free market</label>
+          </div>
+          <div class="answer a_2">
+            <input type="radio" id="Q14_2" name="Q14" value=2 onchange="chkQuestions()" />
+            <label for="Q14_2">Have more government involvement and regulation of the economy</label>
+          </div>
+        </div>
+        <div class="question" id="q_10">
+          <h3>On childcare, would you say...</h3>
+          <div class="answer a_1">
+            <input type="radio" id="Q15_1" name="Q15" value=1 onchange="chkQuestions()" />
+            <label for="Q15_1">A national child care program is a needed investment in the next generation</label>
+          </div>
+          <div class="answer a_2">
+            <input type="radio" id="Q15_2" name="Q15" value=2 onchange="chkQuestions()" />
+            <label for="Q15_2">Leave it as the responsibility of parents to work out their own best child care options</label>
+          </div>
+        </div>
+        <div class="question" id="q_11">
+          <h3>When it comes to doctor-assisted dying...</h3>
+          <div class="answer a_1">
+            <input type="radio" id="Q16_1" name="Q16" value=1 onchange="chkQuestions()" />
+            <label for="Q16_1">It should be easier for individual Canadians to make their own end-of-life decisions </label>
+          </div>
+          <div class="answer a_2">
+            <input type="radio" id="Q16_2" name="Q16" value=2 onchange="chkQuestions()" />
+            <label for="Q16_2">There should be lots of safeguards restricting access to doctor-assisted death</label>
+          </div>
+        </div>
+        <div class="question" id="q_12">
+          <h3>Do you think of Canada's oil industry in Alberta and other parts of the country as:</h3>
+          <div class="answer a_1">
+            <input type="radio" id="Q21_1" name="Q21" value=1 onchange="chkQuestions()" />
+            <label for="Q21_1">An overall liability because of the environmental risk </label>
+          </div>
+          <div class="answer a_2">
+            <input type="radio" id="Q21_2" name="Q21" value=2 onchange="chkQuestions()" />
+            <label for="Q21_2">An overall asset because of its contribution to the Canadian economy </label>
+          </div>
+        </div>
+        <div class="question" id="q_13">
+          <h3>Please indicate which one you think is more important for a child to have:</h3>
+          <div class="answer a_1">
+            <input type="radio" id="Q36_1" name="Q36" value=1 onchange="chkQuestions()" />
+            <label for="Q36_1">Good manners  </label>
+          </div>
+          <div class="answer a_2">
+            <input type="radio" id="Q36_2" name="Q36" value=2 onchange="chkQuestions()" />
+            <label for="Q36_2">Curiosity </label>
+          </div>
+        </div>
+        <div class="question" id="q_14">
+          <h3>In terms of individual success, would you say:</h3>
+          <div class="answer a_1">
+            <input type="radio" id="Q37b_1" name="Q37b" value=1 onchange="chkQuestions()" />
+            <label for="Q37b_1">People who are rich mostly got there through hard work</label>
+          </div>
+          <div class="answer a_2">
+            <input type="radio" id="Q37b_2" name="Q37b" value=2 onchange="chkQuestions()" />
+            <label for="Q37b_2">People who are rich mostly got there through family connections or luck</label>
+          </div>
+        </div>
+        <div class="question" id="q_15">
+          <h3>In your view:</h3>
+          <div class="answer a_1">
+            <input type="radio" id="Q37d_1" name="Q37d" value=1 onchange="chkQuestions()" />
+            <label for="Q37d_1">Most of the stories you see in the news can't be trusted</label>
+          </div>
+          <div class="answer a_2">
+            <input type="radio" id="Q37d_2" name="Q37d" value=2 onchange="chkQuestions()" />
+            <label for="Q37d_2">News media do a good job presenting the facts</label>
+          </div>
+        </div>
+        <div class="question" id="q_16">
+          <div id="classification">
+          </div>
+          <div class="list">
+             <a href="http://angusreid.org/cautious-skeptics" target="_blank">Cautious Skeptics</a>
+              <a href="http://angusreid.org/faith-based-traditionalists" target="_blank">Faith Based Traditionalists</a>
+              <a href="http://angusreid.org/free-enterprise-enthusiasts" target="_blank">Free Enterprise Enthusiasts</a>
+              <a href="http://angusreid.org/public-sector-proponents" target="_blank">Public Sector Proponents</a>
+              <a href="http://angusreid.org/permissive-reformers/" target="_blank">Permissive Reformers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="survey-footer">
+      <img src="http://angusreid.org/wp-content/uploads/2016/10/thumbnail_CBCLogoCol.jpg" alt="CBC logo" height="70">
+      <img src="http://angusreid.org/wp-content/uploads/2016/08/ariwhitebackground.png" alt="ARI logo" height="70">
+    </div>
+
+    <script type="text/javascript">
+
+      $('a#get-started').click(function() {
+        var w = document.getElementsByTagName('body')[0].offsetWidth;
+        $('.question-wrapper').css('left', w * -1);
+        $('.q_tracker').css('color', '#4a4a4a');
+        return false;
+      });
+
+      function calcWidth()
+      {
+        var w = document.getElementsByTagName('body')[0].offsetWidth;
+        var qs = $('.question').size();
+        $('.question-slider').css('width', w);
+        $('.question').css('width', w);
+        $('.question-wrapper').css('width', qs * w);
+        console.log(w);
+      }
+
+      $('.answer label').click(function() {
+        var w = document.getElementsByTagName('body')[0].offsetWidth;
+        var num = $(this).parent().parent().attr('id');
+        if (num == 'q_15')
+        {
+          $('.question-wrapper').css('left', w * (16) * -1);
+          $('.q_tracker').css('color', '#ffffff');
+        }
+        else
+        {
+          var qNum = num.substr(num.indexOf("_") + 1);
+          $('#current-q').html(parseInt(qNum) + 1);
+          $('.question-wrapper').css('left', w * (parseInt(qNum) + 1) * -1);
+        }
+      });
+
+      $( document ).ready(function() {
+        calcWidth();
+      });
+
+      $( window ).resize(function() {
+        calcWidth();
+      });
+    </script>
+  </body>
+</html>

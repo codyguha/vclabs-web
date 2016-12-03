@@ -27,7 +27,9 @@ app.get('/jobs', function (req, res) {
 app.get('/backstage', function (req, res) {
   res.sendFile(path.join(__dirname + '/demo.html'));
 });
-
+app.get('/cvi',function(req,res){
+   res.sendFile(path.join(__dirname + '/cvi.html'));
+})
 app.get('/success',function(req,res){
    res.sendFile(path.join(__dirname + '/success.html'));
 })
