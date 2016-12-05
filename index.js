@@ -60,7 +60,7 @@ app.post('/jobapp',function(req,res){
     from: req.body.email,
     to: 'cody@vclabs.ca',
     subject: 'Application From: '+req.body.firstname+ " "+req.body.lastname+" <"+req.body.email+">",
-    text: "position: " + req.body.position + "\nreason: " +req.body.reason+ "\nwebsite: " +req.body.website+ "\linkedin: " +req.body.linkedin+ "\nemail: " +req.body.email+ "\nphone: " +req.body.phone
+    text: "position: " + req.body.position + "\nreason: " +req.body.reason+ "\nwebsite: " +req.body.website+ "\nlinkedin: " +req.body.linkedin+ "\nemail: " +req.body.email+ "\nphone: " +req.body.phone
   };
   mailgun.messages().send(mail, function (error, body) {
     console.log(body);
